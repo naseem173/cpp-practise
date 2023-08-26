@@ -1,31 +1,37 @@
 #include<iostream>
 using namespace std;
 
-bool isPalindrome(string str){
-    int left = 0;
-    int right = str.length() - 1;
-
-    while(left<right){
-        if(str[left]!=str[right]){
-            return false;
-        }
-        left++;
-        right--;
-    }
-    return true;
-}
-
-
-int countPalindrome(string str){
-    int count = 0;
+int countPalindromeSub(string str){
     int n = str.length();
+    int count = 0;
 
-    for (int i = 0; i < n;i++){
-        for (int j = i; j < (j - i + 1);j++){
-            if(isPalindrome(str.substr(i,j-i+1))){
-                count++;
-            }
+
+    // for odd length
+    for (int center = 0; center < n;center++){
+        int left = center;
+        int right = center;
+
+        while(left>=0 && right <n && str[left]==str[right]){
+            count++;
+            left--;
+            right++;
         }
+
+    }
+    return count;
+
+    // if even length
+
+    for (int center = 0; center < n;center++){
+        int left = center;
+        int right = center+1;
+
+        while(left>=0 && right <n && str[left]==str[right]){
+            count++;
+            left--;
+            right++;
+        }
+
     }
     return count;
 }
@@ -33,7 +39,7 @@ int countPalindrome(string str){
 int main(){
     string s;
     cin >> s;
-    int result = countPalindrome(s);
+    int result = countPalindromeSub(s);
     cout << result << endl;
 
     return 0;
