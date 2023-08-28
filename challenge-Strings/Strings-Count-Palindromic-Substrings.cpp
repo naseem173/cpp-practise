@@ -22,7 +22,7 @@ int countPalindromeSub(string str){
 
     // if even length
 
-    for (int center = 0; center < n;center++){
+    for (int center = 0; center < n-1;center++){
         int left = center;
         int right = center+1;
 
