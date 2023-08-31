@@ -6,6 +6,13 @@ class Car{
     public:
         char name[100];
         int price, model, seats;
+    void print(){
+            cout << "Name: " << name << endl;
+        cout << "Price: " << price << endl;
+        cout << "Model: " << model << endl;
+        cout << "Seats: " << seats << endl;
+        cout << endl;
+    }
 };
 //BLUE Print
 
@@ -20,10 +27,7 @@ main()
     A.model = 2020;
     A.seats = 4;
 
-    cout << "Name: " << A.name << endl;
-    cout << "Price: " << A.price << endl;
-    cout << "Model: " << A.model << endl;
-    cout << "Seats: " << A.seats << endl;
+       
 
     Car B;
 
@@ -32,11 +36,8 @@ main()
     B.model = 2022;
     B.seats = 6;
 
-    cout << "Name: " << B.name << endl;
-    cout << "Price: " << B.price << endl;
-    cout << "Model: " << B.model << endl;
-    cout << "Seats: " << B.seats << endl;
-
+    A.print();
+    B.print();
 
     return 0;
 }
