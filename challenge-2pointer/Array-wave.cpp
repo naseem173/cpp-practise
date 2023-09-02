@@ -15,7 +15,7 @@ int main(){
         }
     }
 
-    for (int i = 0; i < m; i++) {
+    for (int i = m; i > 0; i--) {
         if(i%2!=0){
             for (int j = n-1; j >=0; j--)
             {
