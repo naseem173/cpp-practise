@@ -13,7 +13,14 @@ class Car{
         cout << "Seats: " << seats << endl;
         cout << endl;
     }
+
+    Car(char *n,int p,int s){
+        cout << "I am Parameterised constructor!" << endl;
+        strcpy(name, n);
+        
+    }
 };
+
 //BLUE Print
 
 int
