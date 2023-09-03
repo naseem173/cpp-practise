@@ -16,51 +16,33 @@ int main(){
     }
 
     int top=0, bottom=m-1,left=0,right=n-1;
-    bool isMovingDown = false;
-    bool isMovingRight = true;
-    bool isMovingUp = false;
-    bool isMovingLeft = false;
 
-    
     while (top <= bottom && left <= right) {
-         if(isMovingRight) {
-            for (int i = left; i <= right; i++) {
-                cout << a[top][i] << ", ";
-            }
-            top++;
-            isMovingRight = false;
-            isMovingDown = true;
+        for (int i = left; i <= right;i++){
+            cout << a[top][i] << ", ";
         }
+        top++;
 
-        if (isMovingDown) {
-            for (int i = top; i <= bottom; i++) {
-                cout << a[i][right] << ", ";
-            }
-            right--;
-            isMovingDown = false;
-            isMovingLeft = true;
+        for (int i = top; i <= bottom;i++){
+            cout << a[i][right] << ", ";
         }
-       
+        right--;
 
-        if(isMovingUp) {
-            for (int i = bottom; i >= top; i--) {
-                cout << a[i][left] << ", ";
-            }
-            left++;
-            isMovingUp = false;
-            isMovingRight = true;
-        }
-
-        if (isMovingLeft) {
-            for (int i = right; i >= left; i--) {
+        if(top<=bottom){
+            for (int i = right; i >= left;i--){
                 cout << a[bottom][i] << ", ";
             }
             bottom--;
-            isMovingLeft = false;
-            isMovingUp = true;
         }
+        if(left<=right){
+            for (int i = bottom; i >= top;i--){
+                cout << a[i][left] << ", ";
+            }
+            left++;
+        }
+
     }
-    cout << " END" << endl;
+    cout << "END" << endl;
 
     //11, 12, 13, 14,
     //24, 34, 44, 43,
