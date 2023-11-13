@@ -1,0 +1,8 @@
+steps to create trees
+
+1. Created root
+2. Created LST
+3. Created RST 
+
+....
+return root;
